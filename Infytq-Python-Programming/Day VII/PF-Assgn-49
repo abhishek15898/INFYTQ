@@ -1,0 +1,42 @@
+/*
+
+In a fair coin we have an equal chance (50%) of either getting a ‘head’ or ‘tail’.  
+That is if we toss the coin a large number of times we would observe head approximately 50% of the time. 
+Write a program to implement a biased coin toss where the chance of getting a head is 70% (and tail 30%). 
+That is if we invoke the program 1000 times we should see the head randomly approximately 700 times.
+
+*/
+
+#PF-Tryout
+#Start writing your code here
+#PF-Tryout
+#Start writing your code here
+
+#ASSUME HEADS=1 AND TAILS=2
+import random
+no_of_heads=0
+no_of_tails=0
+
+dictionary={"HEADs":0,"TAILs":0}
+for number in range(1,101):
+    i=random.randrange(1,100)
+    if (i<=70):
+        no_of_heads+=1
+        dictionary["HEADs"]=no_of_heads
+    else:
+        no_of_tails+=1
+        dictionary["TAILs"]=no_of_tails
+        
+'''p = 7000
+i = random.randrange(1,1000)
+if i <= (p/10) :
+    return ‘Head’
+    no_of_heads+=1
+    dictionary["HEADs"]=no_of_heads
+else:
+    no_of_tails+=1
+    dictionary["TAILs"]=no_of_tails
+    return ‘Tail’'''
+    
+        
+print(dictionary)

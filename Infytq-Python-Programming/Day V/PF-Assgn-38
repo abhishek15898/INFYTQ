@@ -1,0 +1,33 @@
+/*
+
+Write a python function, check_double(number) which accepts a whole number and returns True if it satisfies the given conditions.
+
+The number and its double should have exactly the same number of digits.
+Both the numbers should have the same digits ,but in different order.
+Otherwise it should return False.
+
+Example: If the number is 125874 and its double, 251748, contain exactly the same digits, but in a different order.
+
+*/
+
+#PF-Assgn-38
+
+def check_double(number):
+    str1=(str(number))
+    str2=(str(number*2))
+    boolean=[]
+    
+    if (len(str1)==len(str2)):
+        for digit in str1:
+            if digit in str2:
+                boolean.append("True")
+            else:
+                boolean.append("False")
+    else:
+        return False
+    if "False" not in boolean:
+        return True
+    else:
+        return False
+                
+print(check_double(125874))

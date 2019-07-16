@@ -1,0 +1,38 @@
+/*
+
+Alternatively we can use global variables. We calculate the price during purchase and store it in a global variable. 
+Later during return we access the calculated price from the global variable. But this brings more complications than it tries to solve.
+
+*/
+total_mobile_amount=0
+total_shoe_amount=0
+
+def get_mobile(price,brand):
+    global total_mobile_amount
+    if brand=="Apple":
+        discount=15
+    else:
+        discount=10
+    total_mobile_amount=price - price*discount/100
+    print("Your Mobile Brand is "+brand+" And it's Refund price is "+str(total_mobile_amount))
+
+def get_shoe(price,material):
+    global total_shoe_amount
+    if material=="Bata":
+        service_tax=15
+    else:
+        service_tax=10
+
+    total_shoe_amount= price+price*service_tax/100
+    print("Your Shoe Brand is "+material+" And it's Refund price is "+str(total_shoe_amount))
+
+def mobile_refund():
+    print("Your bil has been refunded",total_mobile_amount)
+def shoe_refund():
+    print("Your bil has been refunded",total_shoe_amount)
+    
+get_mobile(20000,"Apple")
+get_shoe(3000,"Bata")
+
+mobile_refund()
+

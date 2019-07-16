@@ -1,0 +1,50 @@
+/*
+
+Write python function, sms_encoding() which accepts a sentence and converts it into an abbreviated sentence to be sent as SMS and returns the abbreviated sentence. 
+
+Rules are as follows: 
+a. Spaces are to be retained as is 
+b. Each word should be encoded separately
+
+If a word has only vowels then retain the word as is
+If a word has a consonant (at least 1) then retain only those consonants
+
+Note: Assume that the sentence would begin with a word and there will be only a single space between the words.
+
+              Sample Input	                                 Expected Output
+      I love Python	I                                          lv Pythn
+      MSD says I love cricket and tennis too	           MSD sys I lv crckt nd tnns t
+      I will not repeat mistakes	                          I wll nt rpt mstks
+
+*/
+
+#PF-Assgn-50
+
+def sms_encoding(data):
+    splitted_data=data.split()
+    new=""
+    print(splitted_data)
+    
+    for word in splitted_data:
+        index=splitted_data.index(word)
+        vowel=[]
+        consonents=""
+        for letter in word:
+            if (letter in "aeiou" or letter in "AEIOU"):
+                vowel.append("True")
+            else:
+                consonents+=letter
+        #print(vowel)
+        #print(consonents)
+        if(len(vowel)==len(word)):
+            continue
+        else:
+            splitted_data.pop(index)
+            splitted_data.insert(index,consonents)
+            
+    s = [word for word in splitted_data] 
+    new= str(" ".join(s)) 
+    return new
+                
+data="GOOD DAYS AND BAD DAYS"
+print(sms_encoding(data))

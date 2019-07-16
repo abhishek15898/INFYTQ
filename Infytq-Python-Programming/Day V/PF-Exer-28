@@ -1,0 +1,40 @@
+/*
+There are two basketball teams (Team1 and Team2) in a school and they play some matches everyday depending on their time and interest. Some days they play 3 matches, some days 2, some days 1 etc.
+
+Write a python function, find_winner_of_the_day(), which accepts the name of the winner of each match and returns the name of the overall winner of the day. In case of equal number of wins, return “Tie”.
+
+Test your code by using the given sample inputs and verify your code by using the 2nd sample input given below:
+
+Sample Input	                                Expected Output
+("Team1","Team2","Team1")	                         Team1
+("Team1","Team2","Team2","Team1","Team2")	            ?
+*/
+
+
+#PF-Exer-28
+                                              
+#This method accepts the name of winner of each match of the day
+def find_winner_of_the_day(*match_tuple):
+    c1=0
+    c2=0
+    for item in match_tuple:
+        if item =='Team1':
+            c1=c1+1
+        elif item =='Team2':
+            c2=c2+1
+        else:
+            pass
+        
+    if(c1>c2):
+        return "Team1"
+    elif(c1==c2):
+        return "Tie"
+    elif(c1<c2):
+      return "Team2"
+    else:
+       return -1
+            
+
+#Invoke the function with each of the print statements given below
+print(find_winner_of_the_day("Team2","Team2","Team2"))
+#print(find_winner_of_the_day("Team1","Team2","Team1","Team2"))

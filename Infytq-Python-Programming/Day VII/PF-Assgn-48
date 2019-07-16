@@ -1,0 +1,57 @@
+/*Write a python function, find_correct() which accepts a dictionary and returns a list as per the rules mentioned below.
+The input dictionary will contain correct spelling of a word as key and the spelling provided by a contestant as the value.
+
+The function should identify the degree of correctness as mentioned below:
+CORRECT, if it is an exact match
+ALMOST CORRECT, if no more than 2 letters are wrong
+WRONG, if more than 2 letters are wrong or if length (correct spelling versus spelling given by contestant) mismatches.
+
+and return a list containing the number of CORRECT answers, number of ALMOST CORRECT answers and number of WRONG answers. 
+Assume that the words contain only uppercase letters and the maximum word length is 10.
+
+Also write the pytest test cases to test the program.
+
+
+         Sample Input	                                                                              Expected Output
+{"THEIR": "THEIR", "BUSINESS": "BISINESS","WINDOWS":"WINDMILL","WERE":"WEAR","SAMPLE":"SAMPLE"}	          [2, 2, 1]
+
+*/
+
+
+
+
+
+#PF-Assgn-48
+
+def find_correct(word_dict):
+    CORRECT=0
+    ALMOST_CORRECT=0
+    WRONG=0
+    list_of_answers=[0,0,0]
+    #start writing your code here
+    for key in word_dict:
+        if(key==word_dict[key]):
+            CORRECT+=1
+            list_of_answers[0]=CORRECT 
+        else:
+            
+            if(len(key)==len(word_dict[key])):
+                matched_letter=0
+                for letter in key:
+                    if letter in word_dict[key]:
+                        matched_letter+=1
+                
+                if(matched_letter>=len(key)-2):
+                    ALMOST_CORRECT+=1
+                    list_of_answers[1]=ALMOST_CORRECT
+                else:
+                    WRONG+=1
+                    list_of_answers[2]=WRONG
+            else:
+                WRONG+=1
+                list_of_answers[2]=WRONG
+        
+    return list_of_answers
+
+word_dict={"WHIZZY":"MIZZLY","PRETTY":"PRESEN"}
+print(find_correct(word_dict))

@@ -1,0 +1,104 @@
+Working with Regular Expression
+
+1. Checks if pattern “Air” is found in “Airline”. To search the pattern "Air" in the given string "Airline".
+
+import re
+if(re.search(r"Air","Airline")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+    
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+2. “.” stands for any character. If any two characters are there between A and l, then the pattern has matched
+   To search the pattern having two characters in between A and l in the given string "Aopline".
+
+import re
+if(re.search(r"A..l","Aopline")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+-------------------------------------------------------------------------------------------------------------------------------------------
+3.  d checks for a digit. If any digit is found between A and l, then pattern is found
+    To search for a digit between A and l in the given string "A2line".
+    
+    import re
+if(re.search(r"A\dl","A2line")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+-------------------------------------------------------------------------------------------------------------------------------------------
+4.  [] does a single character substitution. We can specify a sequence of values. If any of the values are found, then the pattern has matched
+    To search for a number between 4 and 8 in between A and l in the given string.
+    
+    import re
+if(re.search(r"A[0-2]l","A2line")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+-------------------------------------------------------------------------------------------------------------------------------------------
+5.  | acts like ‘or’ operator. If Hell or Fell is found in the string, the pattern is found
+    To search for the pattern "Hell" or "Fell" in the given string "Fellow".
+    
+    import re
+if(re.search(r"Hell|Fell","Fellow")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+-------------------------------------------------------------------------------------------------------------------------------------------
+6.  Checks if a number is found 0 or n times after A
+    To check if a number is found 0 or n times after A in the given string.
+    
+    import re
+if(re.search(r"A\d*","A2234line")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+-------------------------------------------------------------------------------------------------------------------------------------------
+7.  \s indicates a space. Here we are checking if there is a space after Air
+    To check for the space after "Air" in the given string "Airline".
+    
+    import re
+if(re.search(r"Air\s","Airline")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+-------------------------------------------------------------------------------------------------------------------------------------------
+8. Checks if a number is found 0 or 1 times after A
+   To check if a number is found 0 or 1 times after A in the given string.
+  
+  import re
+if(re.search(r"A\d?i","Airline")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+-------------------------------------------------------------------------------------------------------------------------------------------
+9. ^ checks if a pattern is at the beginning of the string. Here we check if string begins with “A”
+    To check if the given string is starting with A.
+    
+    import re
+if(re.search(r"^A","Airline")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+10. $ checks if a pattern is at the end of the string. Here we check if string ends with “e”
+    To check if the given string is ending with e.
+    
+    import re
+if(re.search(r"e$","Airline")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+11. \w checks for a-z,A-Z,0-9,_ Here we check if the last character is an alphanumeric character
+  To check whether last character is alphanumeric or not.
+    
+    import re
+if(re.search(r"\w$","Airline%")!=None):
+    print("Pattern found")
+else:
+    print("Pattern not found")
+-------------------------------------------------------------------------------------------------------------------------------------------

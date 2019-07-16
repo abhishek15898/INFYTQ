@@ -1,0 +1,49 @@
+/*
+
+Write a python program that accepts a text and displays a string which contains the word with the largest frequency in the text and the frequency itself separated by a space.
+
+Rules:
+The word should have the largest frequency.
+In case multiple words have the same frequency, then choose the word that has the maximum length.
+Assumptions:
+The text has no special characters other than space.
+The text would begin with a word and there will be only a single space between the words.
+Perform case insensitive string comparisons wherever necessary.
+
+
+                        Sample Input	                                                                                  Expected Output
+"Work like you do not need money love like you have never been hurt and dance like no one is watching"	                    like 3
+"Courage is not the absence of fear but rather the judgement that something else is more important than fear"	              fear 2
+*/
+#PF-Assgn-56
+
+def max_frequency_word_counter(data):
+    word=""
+    frequency=0
+    new1={}
+    word_list=[]
+    new_text=data.upper().split()
+    
+    for i in new_text:
+        count=new_text.count(i)
+        new1[i]=count
+    
+    
+    value=list(new1.values())
+    value.sort(reverse=True)
+    key=list(new1.keys())
+    
+    frequency=value[0]
+    for i in new1:
+        if new1[i]==frequency:
+            word_list.append(i)
+    word=word_list[0]
+    
+    for i in range(1,len(word_list)):
+        if len(word_list[i])>len(word):
+            word=word_list[i]
+    print(word,frequency)
+  
+#Provide different values for data and test your program.
+data="Twinkle Twinkle Little Star" 
+max_frequency_word_counter(data)

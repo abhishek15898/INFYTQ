@@ -1,0 +1,44 @@
+/*
+
+Consider sample data as follows: sample_data=range(1,11)
+
+
+Create two functions: odd() and even()
+The function even() returns a list of all the even numbers from sample_data
+The function odd() returns a list of all the odd numbers from sample_data
+
+
+Create a function sum_of_numbers() which will accept the sample data and/or a function.
+If a function is not passed, the sum_of_numbers() should return the sum of all the numbers from sample_data
+If a function is passed, the sum_of_numbers() should return the sum of numbers returned from the function passed.
+
+*/
+
+#PF-Assgn-52
+
+#This verification is based on string match.
+
+def sum_of_numbers(list_of_num,filter_func=None):
+    sum_of_elements=0
+    for items in sample_data:
+        sum_of_elements+=items
+    return sum_of_elements 
+    
+
+def even(data):
+    even_list=0
+    for e1 in sample_data:
+        if(e1%2==0):
+            even_list+=e1
+    return even_list
+
+def odd(data):
+    odd_list=0
+    for o in sample_data:
+        if(o%2!=0):
+            odd_list+=o1
+    return odd_list
+
+sample_data = range(1,11)
+
+print(sum_of_numbers(sample_data,None))

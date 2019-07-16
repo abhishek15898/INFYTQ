@@ -1,0 +1,49 @@
+/*
+
+Write a Python function to find all the Strong numbers in a given list of numbers.
+Write another function to find and return the factorial of a number. Use it to solve the problem.
+
+Example:
+A number is considered to be a Strong number if sum of the factorial of its digits is equal to the number itself. 
+145 is a Strong number as 1! + 4! + 5! = 145. 
+
+Sample Input	                  Expected Output
+num_list = [145,375,0,100,2]	    [145, 2]
+Note: 0!=1
+*/
+
+
+#PF-Exer-26
+
+def factorial(number):
+    fact=1
+    if(number==0):
+        fact=1
+    else:
+        for i in range(1,number+1):
+            fact=fact*i
+    return fact
+        
+def find_strong_numbers(num_list):
+    strong_num_list=[]
+    for i in num_list:
+        s=0
+        temp=i
+        if(i==0):
+            s=1
+        else:
+            while(i>0):
+                d=i%10
+                temp1=factorial(d) #go the above function
+                i=i//10
+                s=s+temp1
+        if(temp==s):
+            strong_num_list.append(temp)
+    return strong_num_list
+            
+
+num_list=[145,375,100,2,10]
+strong_num_list=find_strong_numbers(num_list)
+print(strong_num_list)
+
+

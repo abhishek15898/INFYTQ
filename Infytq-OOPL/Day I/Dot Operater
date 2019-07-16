@@ -1,0 +1,29 @@
+/*
+
+We can access the attribute values using the dot operator itself. 
+
+The syntax is as shown below:
+reference_variable.attribute_name
+
+*/
+
+
+
+
+class mobile:
+    pass
+
+mob1=mobile()
+mob2=mobile()
+                                                    
+mob1.price=20555
+mob1.brand="Apple"
+
+mob2.price=45250
+mob2.brand="Samsung"
+
+print(mob1)
+print(mob1.brand)
+print(mob1.price)
+print(mob2.price)
+print(mob2.brand)

@@ -1,0 +1,17 @@
+/*
+Each object is unique and independent of other object. Just like every person, including twins, are unique, so is every object.
+
+
+All objects have an internal unique id ( just like aadhar or green card number ). We can check this using the inbuilt id(). The below code will display the unique number associated with the object.
+
+
+*/
+
+class MGM:
+    pass
+mech_dept=MGM()
+cse_dept=MGM()
+
+
+print("Id of Mech Dept:- ",id(mech_dept))
+print("Id of CSE Dept:- ",id(cse_dept))

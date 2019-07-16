@@ -1,0 +1,13 @@
+/*
+Python has many inbuilt packages and modules. One of the most useful modules is random. This module helps in generating random numbers.
+
+The code given below generates a random number between x and y-1 (both inclusive) using the randrange function of the random module.
+
+Try out and observe the output. 
+
+*/
+
+import random
+x=10
+y=50
+print(random.randrange(x,y)) 

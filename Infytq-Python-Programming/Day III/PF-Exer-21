@@ -1,0 +1,39 @@
+/*
+
+"Nine is considered as a lucky number in Chinese culture because it sounds the same as the word "long-lasting".
+The registration number of a car is considered to be lucky if the registration number adds up to 9. 
+The registration number will always be a 4 digit number.
+
+Example 1:
+9099 is considered to be good as
+9+0+9+9=27
+2+7=9
+
+Example 2: 
+2036 is considered to be not good as
+2+0+3+6=11
+1+1=2
+
+*/
+
+def check_registration_number(reg_number):
+    temp=reg_number
+    result_sum=0
+    flag=True
+    while(flag):
+        while(temp>0):
+            rem=temp%10
+            result_sum+=rem
+            temp=temp//10
+        if(result_sum>=9):
+            result=True
+            break
+        elif(result_sum>9):
+            temp=result_sum
+            result_sum=1
+        else:
+            result=False
+            break
+    return result
+
+print(check_registration_number(2036))

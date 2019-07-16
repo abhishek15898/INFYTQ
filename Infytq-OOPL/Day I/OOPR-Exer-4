@@ -1,0 +1,26 @@
+/*
+
+In the Athlete class given below, 
+make all the attributes private and
+add the necessary accessor and mutator methods
+Represent Maria, the runner and make her run.
+
+Estimated Time: 10 minutes
+
+*/
+
+#OOPR-Exer-4
+class Athlete:
+    def __init__(self,name,gender):
+        self.__name=name
+        self.__gender=gender
+
+    def running(self):
+        if(self.__gender=="girl"):
+            print("150 mtr running")
+        else:
+            print("200 mtr running")
+            
+Athlete_1=Athlete("Maria","girl")
+Athlete_1.running()
+                                        

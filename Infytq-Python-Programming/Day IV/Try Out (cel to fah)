@@ -1,0 +1,18 @@
+/*
+Write a Python program that converts temperature in Celsius to Fahrenheit and vice versa. Implement the requirements using functions.
+Hint:	C= (F-32)*(5/9)
+
+*/
+
+#goal of this tryout is to create a function from scratch and invoke it for the given problem
+def measure_cel(fah):
+    c=(fah-32)*(5/9)
+    return c
+measure_cel = measure_cel(65)
+print(measure_cel)
+
+def measure_fah(cel):
+    f=(cel)*(9/5)+32
+    return f
+measure_f = measure_fah(65)
+print(measure_f)

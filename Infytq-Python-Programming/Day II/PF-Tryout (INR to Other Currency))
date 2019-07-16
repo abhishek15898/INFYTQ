@@ -1,0 +1,50 @@
+/*
+
+A traveler on a visit to India is in need of some Indian Rupees (INR) but he has money belonging to another currency. He wants to know how much money he should provide in the currency he has, to get the specified amount in INR.
+
+
+Write a python program to implement a currency calculator which accepts the amount needed in INR and the name of the currency which the traveler has. The program should identify and display the amount the traveler should provide in the currency he has, to get the specified amount in INR.
+
+
+Note: Use the forex information provided in the table below for the calculation. Consider that only the currency names mentioned in the table are valid. For any invalid currency name, display -1.
+
+
+Currency	Equivalent of 1.00 INR
+Euro	0.01417
+British Pound	0.0100
+Australian Dollar	0.02140
+Canadian Dollar	0.02027
+Also identify the test data and use it to test the program.
+
+
+
+*/
+
+#PF-Tryout
+
+def convert_currency(amount_needed_inr,current_currency_name):
+    current_currency_amount=0
+    #write your logic here
+    if(current_currency_name=="Euro"):
+        INR_E = amount_needed_inr * 0.01417
+        return INR_E
+    elif(current_currency_name=="British Pound"):
+        INR_B = amount_needed_inr * 0.01000
+        return INR_B
+    elif(current_currency_name=="Australian Doller"):
+        INR_C= amount_needed_inr * 0.02140
+        return INR_C
+    elif(current_currency_name=="Canadian Doller"):
+        INR_D= amount_needed_inr * 0.02027
+        return INR_D
+    else:
+        return current_currency_amount
+
+
+#Provide different values for amount_needed_inr,current_currency_name and test your program
+currency_needed=convert_currency(3500,"British Pound")
+if(currency_needed!= -1):
+    print(currency_needed )
+else:
+    print("Invalid currency name")
+

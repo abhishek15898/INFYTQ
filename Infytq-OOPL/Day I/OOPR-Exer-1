@@ -1,0 +1,31 @@
+/*
+Create two functions: purchase_mobile and purchase_shoe
+purchase_mobile() takes two parameters: price and brand
+purchase_shoe() takes two parameters: price and material
+If the mobile brand is “Apple”, discount is 10%, else discount is 5%
+If the shoe material is “leather”, tax is 5%, else tax is 2%
+
+*/
+
+#OOPR-Exer-1
+                                                        
+def purchase_mobile(price, brand):
+    if brand== "Apple":
+        discount=10
+    else:
+        discount=5
+    Amount= price - price*discount/100
+    print("Your Mobile Brand is "+brand+" And its final price is "+str(Amount))
+
+def purchase_shoe(price, material):
+    if material=="leather":
+        service_tax=10
+    else:
+        service_tax=5
+    Amount=price+price*service_tax/100
+    print("Your shoe type "+material+" and its price is "+str(Amount))
+
+
+
+purchase_mobile(20000,"Nokia")
+purchase_shoe(400,"Bata")

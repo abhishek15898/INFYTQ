@@ -1,0 +1,39 @@
+/*
+
+Write a python program to display all the common characters between two strings. Return -1 if there are no matching characters.
+
+Note: Ignore blank spaces if there are any. Perform case sensitive string comparison wherever necessary.
+
+
+
+Sample Input	                              Expected output
+"I like Python"
+"Java is a very popular language"	            lieyon
+Estimated Time: 20 minutes
+
+*/
+
+#PF-Assgn-33
+def find_common_characters(msg1,msg2):
+    l=[]
+    
+    n1=msg1.replace(" ", "")
+    n2=msg2.replace(" ", "")
+    for letter in n1:
+        if letter in n2:
+            l.append(letter)
+    if len(l)!=0:
+        return "".join(l)
+    else:
+        return -1
+    
+    if(msg1==msg2):
+        return -1
+    
+            
+
+#Provide different values for msg1,msg2 and test your program
+msg1="I like Python"
+msg2="Java is a very popular language"
+common_characters=find_common_characters(msg1,msg2)
+print(common_characters)

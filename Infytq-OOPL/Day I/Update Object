@@ -1,0 +1,25 @@
+/*
+We can update the value of an existing attribute using the dot operator. 
+In python, if we assign a value to a non-existent attribute, it will create that attribute for that object alone. 
+*/
+
+class mobile:
+    pass
+mob1=mobile()
+mob2=mobile()
+                                                    
+mob1.price=20555
+mob1.brand="Apple"
+mob1.version="Android"
+
+mob1.version="Masrshmallow" #Update 
+
+
+mob2.price=45250
+mob2.brand="Samsung"
+mob2.version="Android"
+
+mob2.version="Apple_IOS" #Update
+
+print("Update The First Object:- ",mob1.version)
+print("Update The Second Object:- ",mob2.version)

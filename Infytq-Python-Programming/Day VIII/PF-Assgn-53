@@ -1,0 +1,75 @@
+/*
+Assume that a poem is given. Write the regular expressions for the following:
+Print how many times the letter 'v' appears in the poem.
+Remove all the newlines from the poem and print the poem in a single line.
+If a word has 'ch' or 'co', replace it with 'Ch' or 'Co'.
+If the pattern has characters 'ai' or 'hi', replace the next three characters with *\*.
+Test your code by using the given sample inputs. 
+Verify your code by using the 2nd sample input(highlighted) given below:
+
+Input:-
+
+If I can stop one heart from breaking,
+I shall not live in vain;
+If I can ease one life the aching,
+Or cool one pain,
+Or help one fainting robin
+Unto his nest again,
+I shall not live in vain.
+
+
+Expected Output:-
+
+4
+
+If I can stop one heart from breaking, I shall not live in vain; If I can ease one life the aching, Or cool one pain, Or help one fainting robin Unto his nest again, I shall not live in vain. 
+
+If I can stop one heart from breaking,
+I shall not live in vain;
+If I can ease one life the aChing,
+Or Cool one pain,
+Or help one fainting robin
+Unto his nest again,
+I shall not live in vain.
+
+If I can stop one heart from breaking,
+I shall not live in vain;
+If I can ease one life the achi*\*
+Or cool one pain,
+Or help one fai*\*ng robin
+Unto hi*\*est again,
+I shall not live in vain.
+*/
+
+
+
+
+#PF-Assgn-53
+#This verification is based on string match.
+import re
+poem='''
+If I can stop one heart from breaking,
+I shall not live in vain;
+If I can ease one life the aching,
+Or cool one pain,
+Or help one fainting robin
+Unto his nest again,
+I shall not live in vain.
+'''
+
+#Note: Triple quotes can be used to enclose Strings which has lines of text.
+
+print(len(re.findall(r"v",poem)))
+
+print()
+print(re.sub(r"\s+"," ",poem))
+
+print()
+poem=re.sub(r"co","Co",poem)
+poem=re.sub(r"ch","Ch",poem)
+print(poem)
+
+print()
+if(re.search(r"ai|hi",poem)!=None):
+    result=re.sub(r"{ai}...|{hi}...","*/*",poem)
+print(poem)
